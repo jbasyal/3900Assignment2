@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% extends 'crm/base.html' %}
+ {% block body_block %}
+    <h1>Delete {{ customer.name }}?</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" class="btn btn-danger" value="Delete">
+        <td><a href="{% url 'crm:customer_delete' pk=customer.pk %}"
+                           onclick="return confirm('Are you sure you want to delete?')"
+                           class="btn btn-danger">Delete</a>
+                    </td>
+
+
+
+    </form>
+
+{% endblock %}

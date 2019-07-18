@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+{% extends 'crm/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<html lang="en">
+    <h1>Add a New Product</h1>
+    <form method="POST" class="product-form">{% csrf_token %}
+          {{ form|crispy }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+
+<div class="registration-form">
+<form method="POST" class="registration-form">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="save btn btn-default">Register</button>
+</form>
+</div>
+</html>
+{% endblock %}
